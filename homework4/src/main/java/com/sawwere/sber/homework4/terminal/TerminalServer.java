@@ -1,6 +1,9 @@
 package com.sawwere.sber.homework4.terminal;
 
 public interface TerminalServer {
+    int ERROR_LIMIT = 3;
+    long LOCK_TIMEOUT = 10L;
+
     /**
      * Возвращает количество средств на счету.
      *

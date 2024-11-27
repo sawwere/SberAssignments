@@ -8,9 +8,6 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 
 public class TerminalServerImpl implements TerminalServer {
-    public static final int ERROR_LIMIT = 3;
-    private static final long LOCK_TIMEOUT = 10L;
-
     private int currentAmount = 0;
     private int loginErrorCounter = 0;
     private boolean isBlocked = false;
@@ -45,6 +42,14 @@ public class TerminalServerImpl implements TerminalServer {
         currentAmount -= amount;
     }
 
+    /**
+     * Проверяет, корректная ли сумма подана в качестве параметра операции.
+     * Сервер удостоверяется в правильности переданных ему данных
+     * на случай обхода или отсутствия таких проверок со стороны клиента.
+     *
+     * @param amount сумма, которую нужно проверить
+     * @throws IllegalAmountException в случае, когда сумма неположительная или не кратна 100
+     */
     private void verifyAmount(int amount) {
         if (amount <= 0) {
             throw new IllegalAmountException(
