@@ -1,4 +1,4 @@
-package com.sawwere.sber.homework6;
+package com.sawwere.sber.homework6.iterator;
 
 import org.junit.jupiter.api.Assertions;
 

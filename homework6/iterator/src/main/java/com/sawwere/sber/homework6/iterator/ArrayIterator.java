@@ -1,4 +1,4 @@
-package com.sawwere.sber.homework6;
+package com.sawwere.sber.homework6.iterator;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
