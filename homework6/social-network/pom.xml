@@ -7,6 +7,14 @@
         <version>0.0.1</version>
     </parent>
     <artifactId>homework6-socnet</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>recommendation-service</module>
+        <module>user-service</module>
+        <module>team-service</module>
+        <module>topic-service</module>
+        <module>gift-service</module>
+    </modules>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
@@ -14,10 +22,25 @@
     </properties>
 
     <dependencies>
+        <!-- Dev Tools -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.34</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Tests -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <version>5.11.3</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>5.10.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
