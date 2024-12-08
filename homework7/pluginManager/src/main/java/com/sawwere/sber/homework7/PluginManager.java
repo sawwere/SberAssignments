@@ -46,7 +46,7 @@ public class PluginManager {
 
     private URLClassLoader createClassLoader(String jarFilePath) throws MalformedURLException {
         URL jarUrl = new File(jarFilePath).toURI().toURL();
-        return new URLClassLoader(new URL[]{jarUrl}, getClass().getClassLoader());
+        return new MyURLClassLoader(new URL[]{jarUrl}, getClass().getClassLoader());
     }
 
     private JarFile createJarFile(String jarFilePath) throws IOException {

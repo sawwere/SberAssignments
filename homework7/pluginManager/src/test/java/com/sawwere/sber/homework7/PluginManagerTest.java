@@ -1,13 +1,10 @@
-package org.example;
+package com.sawwere.sber.homework7;
 
-import com.sawwere.sber.homework7.Plugin;
-import com.sawwere.sber.homework7.PluginLoadException;
-import com.sawwere.sber.homework7.PluginManager;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.example.TestConstants.*;
+import static com.sawwere.sber.homework7.TestConstants.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PluginManagerTest {
@@ -25,12 +22,12 @@ class PluginManagerTest {
             Plugin plugin1 = pluginManager.load(jarFileNameExisting, correctPluginName1);
 
             assertNotNull(plugin1);
-            assertEquals(plugin1.getClass(), org.example.MyPlugin1.class);
+            assertEquals(plugin1.getClass().getName(), "com.sawwere.sber.homework7.MyPlugin1");
 
             Plugin plugin2 = pluginManager.load(jarFileNameExisting, correctPluginName2);
 
             assertNotNull(plugin2);
-            assertEquals(plugin2.getClass(), org.example.MyPlugin2.class);
+            assertEquals(plugin2.getClass().getName(), "com.sawwere.sber.homework7.MyPlugin2");
 
         } catch (PluginLoadException exception) {
             fail("Не ожидалось исключение: " + exception.getMessage());

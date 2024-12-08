@@ -9,7 +9,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>homewrok7-pluginsForManager</artifactId>
+    <artifactId>homework7-pluginsForManager</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -22,6 +22,12 @@
             <groupId>com.sawwere.sber</groupId>
             <artifactId>homewrok7-pluginManager</artifactId>
             <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sawwere.sber</groupId>
+            <artifactId>homework7-pluginManager</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 

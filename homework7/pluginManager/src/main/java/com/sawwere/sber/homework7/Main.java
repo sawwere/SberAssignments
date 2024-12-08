@@ -6,8 +6,8 @@ public class Main {
         PluginManager pluginManager = new PluginManager("pluginsForManager/target");
 
         try {
-            Plugin plugin = pluginManager.load("pluginsForManager-1.0-SNAPSHOT.jar",
-                    "org.example.MyPlugin1");
+            Plugin plugin = pluginManager.load("homework7-pluginsForManager-1.0-SNAPSHOT.jar",
+                    "com.sawwere.sber.homework7.MyPlugin1");
             plugin.doUsefully();
         } catch (PluginLoadException exception) {
             exception.printStackTrace();

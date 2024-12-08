@@ -1,7 +1,5 @@
 package com.sawwere.sber.homework7;
 
-import com.sawwere.sber.homework7.Plugin;
-
 public class MyPlugin2 implements Plugin {
     @Override
     public void doUsefully() {
