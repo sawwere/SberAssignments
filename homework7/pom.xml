@@ -12,6 +12,7 @@
         <module>pluginManager</module>
         <module>pluginsForManager</module>
         <module>encryptedClassLoader</module>
+        <module>rock-paper-scissors</module>
     </modules>
 
     <properties>
