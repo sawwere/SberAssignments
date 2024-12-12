@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.sawwere.sber</groupId>
-        <artifactId>homework6-parent</artifactId>
+        <artifactId>homework8-parent</artifactId>
         <version>0.0.1</version>
     </parent>
     <artifactId>homework8-cache-proxy</artifactId>
@@ -14,6 +14,14 @@
     </properties>
 
     <dependencies>
+        <!-- Dev Tools -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.34</version>
+            <scope>provided</scope>
+        </dependency>
+
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
