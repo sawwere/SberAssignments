@@ -3,6 +3,11 @@ package com.sawwere.sber.homework9;
 import java.util.NoSuchElementException;
 import java.util.function.Predicate;
 
+/**
+ * A class that implements the operation of the filter stream.
+ * It is an iterator that skips the elements of the parent stream using the passed predicate.
+ * @param <T> type of elements in the stream
+ */
 public class FilterStream<T> extends Streams<T> {
 
     private final Streams<T> parent;

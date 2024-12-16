@@ -2,7 +2,13 @@ package com.sawwere.sber.homework9;
 
 import java.util.function.Function;
 
-
+/**
+ *  A class that implements the operation of the transform stream.
+ *  It is an iterator that returns the elements of the parent stream
+ *  transformed with the passed function.
+ * @param <T> type of elements in the parent stream
+ * @param <R> type of elements in the result stream
+ */
 class TransformStream<T, R> extends Streams<R> {
 
     private final Streams<T> parent;
