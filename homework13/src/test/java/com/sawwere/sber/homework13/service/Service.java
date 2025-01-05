@@ -9,6 +9,9 @@ public interface Service {
     @Cache(identityBy = {String.class}, cacheType = CacheType.IN_MEMORY)
     String run(Integer time, String name);
 
+    @Cache(identityBy = {String.class}, cacheType = CacheType.IN_MEMORY)
+    String runWithAnotherName(Integer time, String name);
+
     @Cache(identityBy = {String.class}, cacheType = CacheType.FILE, fileNamePrefix = "temp_")
     String runInFile(Integer time, String name);
 

@@ -16,11 +16,17 @@ import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 import java.util.function.Supplier;
 
 
 public class FileCacheStorage extends CacheStorage {
     private final Path cacheDir;
+    // Block will affect the file containing method results.
+    // Concurrent calls will have to wait until other thread completes read/write operation with the file
+    private final Map<Path, Lock> lockMap = new ConcurrentHashMap<>();
 
     public FileCacheStorage(Path cacheDir, Boolean shouldCleanDir) {
         this.cacheDir = cacheDir;
@@ -49,7 +55,11 @@ public class FileCacheStorage extends CacheStorage {
                 + method.getName()
                 + strategy.getFileExtension()
         );
+        //to lock file by its name
+        Lock fileLock = lockMap.computeIfAbsent(fileName, key -> new ReentrantLock());
+
         try {
+            fileLock.lock();
             Map<List<Object>, Object> map;
             if (!Files.exists(fileName)) {
                 FileUtils.createEmptyFile(fileName);
@@ -67,6 +77,8 @@ public class FileCacheStorage extends CacheStorage {
             throw new CacheException("Requested cache file cannot be read", e);
         } catch (ClassNotFoundException e) {
             throw new SerializationException("Cache file is corrupted. Unable to deserialize data", e);
+        } finally {
+            fileLock.unlock();
         }
     }
 }

@@ -6,8 +6,21 @@ import java.util.List;
 public class ServiceImpl implements Service {
     @Override
     public String run(Integer time, String name) {
+        System.out.println("Enter run(%d, %s)".formatted(time, name));
         try {
-            Thread.sleep(time*1000);
+            Thread.sleep(time);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        return "Completed %s in %d seconds".formatted(name, time);
+    }
+
+    @Override
+    public String runWithAnotherName(Integer time, String name) {
+        System.out.println("Enter runWithAnotherName(%d, %s)".formatted(time, name));
+        try {
+            Thread.sleep(time);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
