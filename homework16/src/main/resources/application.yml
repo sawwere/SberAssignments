@@ -1,0 +1,16 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: recipe-application
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/sber_homework_18
+    username: postgres
+    password: 1234
+  flyway:
+    user: postgres
+    password: 1234
+    schemas: public
+    baselineOnMigrate: true
+    enabled: true
