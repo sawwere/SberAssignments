@@ -6,11 +6,15 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
+/**
+ *  Реализация {@link IngredientRepository} с использованием SpringJdbc
+ */
 @Repository
 public class SpringJdbcIngredientRepository implements IngredientRepository {
     private final JdbcTemplate jdbcTemplate;
@@ -24,6 +28,9 @@ public class SpringJdbcIngredientRepository implements IngredientRepository {
                 .usingGeneratedKeyColumns("id");
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<Ingredient> findAll() {
         return jdbcTemplate.query("SELECT * FROM ingredients",
@@ -31,13 +38,18 @@ public class SpringJdbcIngredientRepository implements IngredientRepository {
         );
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
+    @Transactional
     public Ingredient create(Ingredient ingredient) {
         BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(ingredient);
         var result = simpleJdbcInsert.executeAndReturnKey(params).longValue();
         ingredient.setId(result);
         return ingredient;
     }
+
 
     private static class IngredientRowMapper implements RowMapper<Ingredient> {
 

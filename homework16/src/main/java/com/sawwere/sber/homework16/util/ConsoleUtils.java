@@ -2,6 +2,10 @@ package com.sawwere.sber.homework16.util;
 
 import java.util.Scanner;
 
+/**
+ * Вспомогательные методы для чтения данных с консоли.
+ * Ввод повторяется до тех пор, пока не будет введено требуемое значение.
+ */
 public final class ConsoleUtils {
     public static Long readLong(String message, Scanner scanner) {
         while (true) {

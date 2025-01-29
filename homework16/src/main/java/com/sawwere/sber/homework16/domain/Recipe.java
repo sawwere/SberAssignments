@@ -4,6 +4,9 @@ import lombok.*;
 
 import java.util.List;
 
+/**
+ * Сущность Рецепт
+ */
 @Getter
 @Setter
 @Builder

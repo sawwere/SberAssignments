@@ -39,6 +39,7 @@ public class RecipeServiceImpl implements RecipeService {
     @Transactional
     public Recipe create(Recipe recipe) {
         Recipe result = recipeRepository.create(recipe);
+        // каскадное создание компонентов рецепта
         for (RecipeIngredient ri : recipe.getIngredients()) {
             recipeIngredientRepository.create(ri);
         }

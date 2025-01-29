@@ -7,6 +7,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Map;
 
+/**
+ * Реализация {@link RecipeIngredientRepository} с использованием SpringJdbc
+ */
 @Repository
 public class SpringJdbcRecipeIngredientRepository implements RecipeIngredientRepository {
     private final SimpleJdbcInsert simpleJdbcInsert;
@@ -16,6 +19,9 @@ public class SpringJdbcRecipeIngredientRepository implements RecipeIngredientRep
                 .withTableName("recipes_ingredients");
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public RecipeIngredient create(RecipeIngredient recipeIngredient) {
         simpleJdbcInsert.execute(Map.of(
