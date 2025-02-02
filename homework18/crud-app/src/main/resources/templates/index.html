@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Форум</title>
+
+    <link rel="stylesheet" type="text/css" media="all" href="/css/style.css" th:href="@{/css/style.css}" />
+</head>
+
+<body>
+    <header id="header" class="header" >
+        <h1><a href="/">Форум</a></h1>
+
+    </header>
+    <h1>Добро пожаловать!</h1>
+    <div>
+        Это CRUD приложение-форум, здесь можно:
+        <ol>
+            <li>Создавать, редактировать и удалять посты</li>
+            <li>Просматривать список всех постов</li>
+            <li>Просматривать страницу каждого отдельного поста с комментариями к нему</li>
+            <li>Создавать и удалять комментарии к постам</li>
+        </ol>
+    </div>
+    <h1><a href="/topics">Перейти к постам</a></h1>
+</body>
+</html>

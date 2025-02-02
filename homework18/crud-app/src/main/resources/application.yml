@@ -1,0 +1,20 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: forum-application
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/sber_homework_forum
+    username: postgres
+    password: 1234
+  jpa:
+    hibernate:
+      ddl-auto: update
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
