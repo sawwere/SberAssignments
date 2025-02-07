@@ -4,12 +4,14 @@ import com.sawwere.sber.homework18.crud.domain.Topic;
 import com.sawwere.sber.homework18.crud.dto.ReplyCreationDto;
 import com.sawwere.sber.homework18.crud.dto.TopicCreationDto;
 import com.sawwere.sber.homework18.crud.servce.TopicService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.servlet.ModelAndView;
-
-import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
@@ -21,7 +23,7 @@ public class TopicPostController {
 
 
     @PostMapping(CREATE_TOPIC)
-    public ModelAndView createTopic(@ModelAttribute TopicCreationDto dto) {
+    public ModelAndView createTopic(@Valid @ModelAttribute TopicCreationDto dto) {
         ModelAndView mav = new ModelAndView("topic");
         Topic topic = topicService.create(dto);
         mav.addObject("topic", topic);
@@ -30,7 +32,7 @@ public class TopicPostController {
     }
 
     @PutMapping(UPDATE_TOPIC)
-    public ModelAndView updateTopic(@PathVariable Long id, @ModelAttribute TopicCreationDto dto) {
+    public ModelAndView updateTopic(@PathVariable Long id, @Valid @ModelAttribute TopicCreationDto dto) {
         Topic updatedTopic = topicService.update(id, dto);
         ModelAndView mav = new ModelAndView("topic");
         mav.addObject("topic", updatedTopic);

@@ -2,6 +2,7 @@ package com.sawwere.sber.homework18.crud.controller;
 
 import com.sawwere.sber.homework18.crud.dto.ReplyCreationDto;
 import com.sawwere.sber.homework18.crud.servce.ReplyService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,7 +19,7 @@ public class ReplyController {
     public static final String DELETE_REPLY = "/replies/delete/{id}";
 
     @PostMapping(CREATE_REPLY)
-    public String createReply(@PathVariable(name = "id") Long topicId, @ModelAttribute ReplyCreationDto dto) {
+    public String createReply(@PathVariable(name = "id") Long topicId, @Valid @ModelAttribute ReplyCreationDto dto) {
         dto.setTopicId(topicId);
         replyService.create(dto);
         return "redirect:%s".formatted(TopicGetController.GET_TOPIC.replace("{id}", topicId.toString()));
