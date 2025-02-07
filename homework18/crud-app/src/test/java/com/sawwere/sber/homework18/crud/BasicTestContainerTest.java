@@ -15,7 +15,7 @@ import org.testcontainers.junit.jupiter.Testcontainers;
 public class BasicTestContainerTest {
     @Container
     public static PostgreSQLContainer<?> POSTGRES = new PostgreSQLContainer<>("postgres:16")
-            .withDatabaseName("team-selection-test")
+            .withDatabaseName("forum-application-test")
             .withUsername("TestUser")
             .withPassword("1234");
 
