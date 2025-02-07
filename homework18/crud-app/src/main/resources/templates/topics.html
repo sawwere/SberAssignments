@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Форум</title>
+
+
+    <link rel="stylesheet" type="text/css" media="all" href="/css/style.css" th:href="@{/css/style.css}" />
+</head>
+
+<body>
+<header id="header" class="header" >
+    <h1><a href="/">Форум</a></h1>
+</header>
+
+<div class="container">
+    <div class="center label"><a th:href="@{topics/create}">Нажми, чтобы создать свой пост!</a></div>
+    <div class="topicList" >
+        <div class="topicComponent" th:each="topic: ${topicList}">
+            <div class="topicPreview">
+                <div class="topicTitle" >
+                    <b th:text="${topic.title}"></b>
+                </div>
+                <div class="topicAuthor" th:text="'Создан пользователем ' + ${topic.author}"></div>
+                <div class="topicText" th:text="${topic.text}"></div>
+            </div>
+            <div class="topicLinks">
+                <div class="topicLink">
+                    <a th:href="@{topics/{id}(id=${topic.id})}">Перейти</a>
+                </div>
+                <div class="topicLink">
+                    <a th:href="@{topics/update/{id}(id=${topic.id})}">Редактировать</a>
+                </div>
+                <div class="topicLink">
+                    <a th:href="@{topics/delete/{id}(id=${topic.id})}">Удалить</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

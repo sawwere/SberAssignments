@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Ошибка</title>
+    <link rel="stylesheet" type="text/css" media="all" href="/css/style.css" th:href="@{/css/style.css}" />
+</head>
+
+<body>
+<header id="header" class="header" >
+    <h1><a href="/">Форум</a></h1>
+
+</header>
+<h1>Ой-ой!</h1>
+<div>
+    <ul>
+        <li th:text="'Ошибка: ' + ${errorInfo.title}"></li>
+        <li th:text="'Описание: ' + ${errorInfo.description}"></li>
+    </ul>
+</div>
+</body>
+</html>

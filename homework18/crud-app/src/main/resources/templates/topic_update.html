@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Форум</title>
+
+
+    <link rel="stylesheet" type="text/css" media="all" href="/css/style.css" th:href="@{/css/style.css}" />
+</head>
+
+<body>
+<header id="header" class="header" >
+    <h1><a href="/">Форум</a></h1>
+</header>
+<form th:action="@{/topics/{id}(id=${topic.id})}" th:method="PUT">
+    <table>
+        <caption>
+            <h1>Изменение поста</h1>
+        </caption>
+        <tbody>
+        <tr>
+            <td>
+                <label for="author">Ник</label>
+            </td>
+            <td>
+                <input type="text" id="author" name="author" required th:value="${topic.author}" placeholder="Ник">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="title">Название</label>
+            </td>
+            <td>
+                <input type="text" id="title" name="title" required th:value="${topic.title}" placeholder="Название">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="text">Текст</label>
+            </td>
+            <td>
+                <textarea id="text" name="text" required th:text="${topic.text}" th:value="${topic.text}" placeholder="Текст"></textarea>
+            </td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="2">
+                <button type="submit">Сохранить</button>
+            </td>
+        </tr>
+        </tfoot>
+    </table>
+</form>
+</body>
+</html>
