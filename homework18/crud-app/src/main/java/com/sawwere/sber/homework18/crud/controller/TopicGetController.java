@@ -17,8 +17,6 @@ import java.util.List;
 public class TopicGetController {
     private final TopicService topicService;
 
-    private final TopicMapper topicMapper;
-
     public static final String GET_CREATE_TOPIC_PAGE = "/topics/create";
     public static final String GET_UPDATE_TOPIC_PAGE = "/topics/update/{id}";
     public static final String DELETE_TOPIC = "/topics/delete/{id}";

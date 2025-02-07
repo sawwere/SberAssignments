@@ -8,9 +8,15 @@ spring:
     url: jdbc:postgresql://localhost:5432/sber_homework_forum
     username: postgres
     password: 1234
+  flyway:
+    user: postgres
+    password: 1234
+    schemas: public
+    baselineOnMigrate: true
+    enabled: true
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: validate
   mvc:
     hiddenmethod:
       filter:

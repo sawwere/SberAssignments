@@ -23,6 +23,6 @@ public class Reply {
     @Column(name = "author", nullable = false)
     private String author;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     private Topic topic;
 }
