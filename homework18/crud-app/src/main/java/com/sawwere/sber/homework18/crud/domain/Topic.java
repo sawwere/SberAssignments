@@ -3,6 +3,7 @@ package com.sawwere.sber.homework18.crud.domain;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Builder
@@ -28,5 +29,6 @@ public class Topic {
     private String author;
 
     @OneToMany(mappedBy = "topic", cascade = CascadeType.ALL)
-    private List<Reply> replies;
+    @Builder.Default
+    private List<Reply> replies = new ArrayList<>();
 }
