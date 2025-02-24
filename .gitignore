@@ -32,3 +32,5 @@ build/
 ### VS Code ###
 .vscode/
 amplicode.xml
+/homework18/crud-app/.allure
+/homework18/crud-app/allure-results
