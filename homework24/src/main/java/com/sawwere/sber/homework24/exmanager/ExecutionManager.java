@@ -1,4 +1,4 @@
-package com.sawwere.sber.homework14.exmanager;
+package com.sawwere.sber.homework24.exmanager;
 
 public interface ExecutionManager {
     /**

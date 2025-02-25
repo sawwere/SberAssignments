@@ -1,8 +1,8 @@
-package com.sawwere.sber.homework14;
+package com.sawwere.sber.homework24;
 
-import com.sawwere.sber.homework14.exmanager.Context;
-import com.sawwere.sber.homework14.exmanager.ExecutionManager;
-import com.sawwere.sber.homework14.exmanager.ExecutionManagerImpl;
+import com.sawwere.sber.homework24.exmanager.Context;
+import com.sawwere.sber.homework24.exmanager.ExecutionManager;
+import com.sawwere.sber.homework24.exmanager.ExecutionManagerImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

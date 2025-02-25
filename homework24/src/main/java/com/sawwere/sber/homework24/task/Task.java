@@ -1,4 +1,4 @@
-package com.sawwere.sber.homework14.task;
+package com.sawwere.sber.homework24.task;
 
 import java.util.concurrent.Callable;
 

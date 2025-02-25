@@ -1,7 +1,7 @@
-package com.sawwere.sber.homework14;
+package com.sawwere.sber.homework24;
 
-import com.sawwere.sber.homework14.task.Task;
-import com.sawwere.sber.homework14.task.TaskExecutionException;
+import com.sawwere.sber.homework24.task.Task;
+import com.sawwere.sber.homework24.task.TaskExecutionException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
