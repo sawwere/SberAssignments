@@ -89,4 +89,12 @@
 
 ## Задание 2
 Из %JAVA_HOME%\bin запустить jvisualvm, установить через пункт меню Tools\Plugins\Available Plugis плагин: Visual GC  
-Запустить приложение создающее много объектов с разными GC, посмотреть в jvisualvm как заполняются объекты в разных областях памяти(heap) 
+Запустить приложение создающее много объектов с разными GC, посмотреть в jvisualvm как заполняются объекты в разных областях памяти(heap)  
+#### -XX:+UseSerialGC  
+![SerialGC.jpg](.github/images/SerialGC.jpg)
+
+#### -XX:+UseParallelGC  
+![ParallelGC.jpg](.github/images/ParallelGC.jpg)
+
+#### -XX:+UseG1GC  
+![G1GC.jpg](.github/images/G1GC.jpg)
